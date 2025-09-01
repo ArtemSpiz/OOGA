@@ -22,7 +22,7 @@ const Rewards = () => {
 
   return (
     <section className="bg-[#030210]">
-      <div className="max-w-custom-container mx-auto flex flex-col gap-[84px] pt-[60px] md:flex-row md:gap-11 md:px-12 md:pt-[100px]">
+      <div className="max-w-custom-container mx-auto flex flex-col justify-between gap-[84px] pt-[60px] md:flex-row md:gap-11 md:px-12 md:pt-[100px]">
         <div className="flex flex-col gap-16 px-6 md:w-[40%] md:px-0">
           <div className="flex flex-col gap-6 text-center md:text-left">
             <p className="text-[#6480A4]">{`[ Rewards ]`}</p>
@@ -52,20 +52,24 @@ const Rewards = () => {
             })}
           </div>
         </div>
-        <Image
+        {/* <Image
           className="w-full md:hidden"
           src="/home/reward-mobile.png"
           alt="rewards"
           width={1366}
           height={689}
-        />
-        <Image
+        /> */}
+        <video className="w-[50%] max-md:w-[120%]" autoPlay muted loop playsInline>
+          <source src="/videos/RewardsVideo.mp4" type="video/mp4" />
+        </video>
+
+        {/* <Image
           className="hidden w-[60%] md:block"
           src="/home/reward.png"
           alt="rewards"
           width={1366}
           height={689}
-        />
+        /> */}
       </div>
     </section>
   );

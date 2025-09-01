@@ -4,7 +4,7 @@ import LightRight from "/public/advancedLightRight.png";
 
 const Capabilities = () => {
   return (
-    <section className="bg-[#030210] relative">
+    <section className="relative bg-[#030210]">
       <div className="pointer-events-none absolute top-[-100px] left-0 h-auto max-w-[600px]">
         <Image alt="LightLeft" src={LightLeft} />
       </div>
@@ -23,7 +23,7 @@ const Capabilities = () => {
         </div>
         <div className="flex flex-col gap-6 md:flex-row">
           <div className="flex flex-col gap-6 md:w-[55%]">
-            <div className="relative overflow-hidden rounded-lg bg-gradient-to-b from-white/5 to-white/[2%] p-8">
+            <div className="relative overflow-hidden rounded-lg border border-transparent bg-gradient-to-b from-white/5 to-white/[2%] p-8 transition-all duration-500 hover:border-[rgba(56,189,248,0.4)] hover:bg-[linear-gradient(180deg,rgba(56,189,248,0.08)_0%,rgba(56,189,248,0.01)_100%)] hover:shadow-lg">
               <div className="relative z-10 mb-16 flex w-[60%] flex-col gap-3">
                 <h2 className="text-xl">Turnkey</h2>
                 <p className="text-sm text-[#D5F6FE]/50">
@@ -38,7 +38,7 @@ const Capabilities = () => {
                 width={500}
               />
             </div>
-            <div className="relative overflow-hidden rounded-lg bg-gradient-to-b from-white/5 to-white/[2%] p-8">
+            <div className="relative overflow-hidden rounded-lg border border-transparent bg-gradient-to-b from-white/5 to-white/[2%] p-8 transition-all duration-500 hover:border-[rgba(56,189,248,0.4)] hover:bg-[linear-gradient(180deg,rgba(56,189,248,0.08)_0%,rgba(56,189,248,0.01)_100%)] hover:shadow-lg">
               <div className="relative z-10 mb-16 flex w-[60%] flex-col gap-3 md:mb-[110px]">
                 <h2 className="text-xl">Multi-Wallet Support</h2>
                 <p className="text-sm text-[#D5F6FE]/50">
@@ -55,7 +55,7 @@ const Capabilities = () => {
             </div>
           </div>
           <div className="flex flex-col gap-6 md:w-[45%]">
-            <div className="relative overflow-hidden rounded-lg bg-gradient-to-b from-white/5 to-white/[2%] p-8">
+            <div className="relative overflow-hidden rounded-lg border border-transparent bg-gradient-to-b from-white/5 to-white/[2%] p-8 transition-all duration-500 hover:border-[rgba(56,189,248,0.4)] hover:bg-[linear-gradient(180deg,rgba(56,189,248,0.08)_0%,rgba(56,189,248,0.01)_100%)] hover:shadow-lg">
               <div className="relative z-10 mb-16 flex w-[60%] flex-col gap-3 md:mb-[110px]">
                 <h2 className="text-xl">Dedicated Nodes</h2>
                 <p className="text-sm text-[#D5F6FE]/50">
@@ -70,7 +70,7 @@ const Capabilities = () => {
                 width={500}
               />
             </div>
-            <div className="relative overflow-hidden rounded-lg bg-gradient-to-b from-white/5 to-white/[2%] p-8">
+            <div className="relative overflow-hidden rounded-lg border border-transparent bg-gradient-to-b from-white/5 to-white/[2%] p-8 transition-all duration-500 hover:border-[rgba(56,189,248,0.4)] hover:bg-[linear-gradient(180deg,rgba(56,189,248,0.08)_0%,rgba(56,189,248,0.01)_100%)] hover:shadow-lg">
               <div className="relative z-10 mb-16 flex w-[60%] flex-col gap-3">
                 <h2 className="text-xl">Social Layer</h2>
                 <p className="text-sm text-[#D5F6FE]/50">
