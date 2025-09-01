@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--local-font-lufga);
+  --color-primary: #38bdf8;
+  --spacing-custom-container: 1440px;
+}
