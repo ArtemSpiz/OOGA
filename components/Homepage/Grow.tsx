@@ -18,12 +18,12 @@ const Grow = () => {
 
     gsap.to(wordRefs.current, {
       color: "rgba(255,255,255,1)",
-      stagger: 0.2,
-      ease: "power2.inOut",
+      stagger: 0.02,
+      ease: "power5.inOut",
       scrollTrigger: {
         trigger: wordRefs.current[0]?.parentElement,
         start: "top 80%",
-        end: "top 30%",
+        end: "top 50%",
         scrub: 1,
       },
     });

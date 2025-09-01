@@ -9,7 +9,7 @@ type Props = {
 
 const Button: React.FC<Props> = ({ children, Icon, variant = "filled" }) => {
   const baseClasses =
-    "flex h-12 cursor-pointer justify-center text-center items-center gap-2 rounded-lg px-6 transition-colors uppercase";
+    "flex h-12 cursor-pointer justify-center text-center items-center gap-2 rounded-lg px-6 transition-colors uppercase relative z-0 overflow-visible group";
 
   const variantClasses = {
     filled:
@@ -19,13 +19,58 @@ const Button: React.FC<Props> = ({ children, Icon, variant = "filled" }) => {
   };
 
   return (
-    <button className={clsx(baseClasses, variantClasses[variant])}>
+    <button
+      className={clsx(baseClasses, variantClasses[variant])}
+      style={{
+        transition: "transform 0.3s",
+      }}
+      onMouseEnter={(e) => {
+        e.currentTarget.style.animation = "jellyBounce 0.6s ease-in-out";
+      }}
+      onAnimationEnd={(e) => {
+        e.currentTarget.style.animation = "";
+      }}
+    >
       {children}
       {Icon ? (
         <span className="h-4 w-4">
           <Icon />
         </span>
       ) : null}
+
+      <span className="pointer-events-none absolute inset-0 -z-10 scale-110 rounded-lg border border-white/50 opacity-0 group-hover:animate-[pulseWave_1s_infinite_ease-out]" />
+      <span className="pointer-events-none absolute inset-0 -z-10 scale-110 rounded-lg border border-white/50 opacity-0 group-hover:animate-[pulseWave_1s_infinite_ease-out] group-hover:delay-1000" />
+
+      <style jsx>{`
+        @keyframes jellyBounce {
+          0% {
+            transform: scale(1, 1);
+          }
+          30% {
+            transform: scale(1.15, 0.85);
+          }
+          50% {
+            transform: scale(0.9, 1.1);
+          }
+          70% {
+            transform: scale(1.05, 0.95);
+          }
+          100% {
+            transform: scale(1, 1);
+          }
+        }
+
+        @keyframes pulseWave {
+          0% {
+            transform: scale(0.9, 0.9);
+            opacity: 0.6;
+          }
+          100% {
+            transform: scale(1, 1.2);
+            opacity: 0;
+          }
+        }
+      `}</style>
     </button>
   );
 };
