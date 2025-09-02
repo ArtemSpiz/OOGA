@@ -71,10 +71,10 @@ const Capabilities = () => {
             Maximize speed, control, and connectivity in your trades
           </p>
         </div>
-        <div className="flex flex-col gap-6 md:h-[433px] md:flex-row">
-          <div className="flex flex-col gap-6 md:w-[488px]">
+        <div className="flex flex-col gap-6 md:flex-row">
+          <div className="flex flex-col gap-6 md:w-[498px]">
             <div
-              className="relative overflow-hidden rounded-lg border border-transparent bg-gradient-to-b bg-[linear-gradient(180deg,rgba(56,189,248,0.08)_0%,rgba(56,189,248,0.01)_100%)] from-white/5 to-white/[2%] p-8 transition-all duration-500 max-md:h-[200px] max-md:border max-md:border-[rgba(56,189,248,0.40)] md:h-[178.523px]"
+              className="relative overflow-hidden rounded-lg border border-transparent bg-gradient-to-b bg-[linear-gradient(180deg,rgba(56,189,248,0.08)_0%,rgba(56,189,248,0.01)_100%)] from-white/5 to-white/[2%] p-8 transition-all duration-500 max-md:h-[200px] max-md:border max-md:border-[rgba(56,189,248,0.40)] md:h-[159.523px]"
               onMouseEnter={() => handleMouseEnter("card1")}
               onMouseLeave={() => handleMouseLeave("card1")}
             >
@@ -86,7 +86,7 @@ const Capabilities = () => {
               </div>
               <video
                 ref={videoRefs.card1}
-                className="absolute top-0 right-0 h-full w-full object-fill max-md:object-cover max-md:object-[calc(100%+70px)]"
+                className="absolute top-0 right-0 h-full w-full object-fill max-md:object-cover max-sm:object-[calc(100%+70px)]"
                 muted
                 preload="auto"
                 playsInline
@@ -126,7 +126,7 @@ const Capabilities = () => {
           </div>
           <div className="flex flex-col gap-6 md:w-[390px]">
             <div
-              className="relative overflow-hidden rounded-lg border border-transparent bg-gradient-to-b bg-[linear-gradient(180deg,rgba(56,189,248,0.08)_0%,rgba(56,189,248,0.01)_100%)] from-white/5 to-white/[2%] p-8 transition-all duration-500 max-md:h-[200px] max-md:border max-md:border-[rgba(56,189,248,0.40)] md:h-[219.058px]"
+              className="relative overflow-hidden rounded-lg border border-transparent bg-gradient-to-b bg-[linear-gradient(180deg,rgba(56,189,248,0.08)_0%,rgba(56,189,248,0.01)_100%)] from-white/5 to-white/[2%] p-8 transition-all duration-500 max-md:h-[200px] max-md:border max-md:border-[rgba(56,189,248,0.40)] md:h-[209.058px]"
               onMouseEnter={() => handleMouseEnter("card3")}
               onMouseLeave={() => handleMouseLeave("card3")}
             >
@@ -151,7 +151,7 @@ const Capabilities = () => {
               </video>
             </div>
             <div
-              className="relative overflow-hidden rounded-lg border border-transparent bg-gradient-to-b bg-[linear-gradient(180deg,rgba(56,189,248,0.08)_0%,rgba(56,189,248,0.01)_100%)] from-white/5 to-white/[2%] p-8 transition-all duration-500 max-md:h-[200px] max-md:border max-md:border-[rgba(56,189,248,0.40)] md:h-[169.523px]"
+              className="relative overflow-hidden rounded-lg border border-transparent bg-gradient-to-b bg-[linear-gradient(180deg,rgba(56,189,248,0.08)_0%,rgba(56,189,248,0.01)_100%)] from-white/5 to-white/[2%] p-8 transition-all duration-500 max-md:h-[200px] max-md:border max-md:border-[rgba(56,189,248,0.40)] md:h-[159.523px]"
               onMouseEnter={() => handleMouseEnter("card4")}
               onMouseLeave={() => handleMouseLeave("card4")}
             >
