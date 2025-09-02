@@ -25,7 +25,7 @@ const Button: React.FC<Props> = ({ children, Icon, variant = "filled" }) => {
         transition: "transform 0.3s",
       }}
       onMouseEnter={(e) => {
-        e.currentTarget.style.animation = "jellyBounce 0.6s ease-in-out";
+        e.currentTarget.style.animation = "pulse 0.6s ease-in-out";
       }}
       onAnimationEnd={(e) => {
         e.currentTarget.style.animation = "";
@@ -42,21 +42,15 @@ const Button: React.FC<Props> = ({ children, Icon, variant = "filled" }) => {
       <span className="pointer-events-none absolute inset-0 -z-10 scale-110 rounded-lg border border-white/50 opacity-0 group-hover:animate-[pulseWave_1s_infinite_ease-out] group-hover:delay-1000" />
 
       <style jsx>{`
-        @keyframes jellyBounce {
+        @keyframes pulse {
           0% {
-            transform: scale(1, 1);
-          }
-          30% {
-            transform: scale(1.15, 0.85);
+            transform: scale(1);
           }
           50% {
-            transform: scale(0.9, 1.1);
-          }
-          70% {
-            transform: scale(1.05, 0.95);
+            transform: scale(1.05);
           }
           100% {
-            transform: scale(1, 1);
+            transform: scale(1);
           }
         }
 

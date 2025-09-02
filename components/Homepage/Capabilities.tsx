@@ -1,8 +1,58 @@
+"use client";
+import { useRef } from "react";
 import Image from "next/image";
 import LightLeft from "/public/advancedLightLeft.png";
 import LightRight from "/public/advancedLightRight.png";
 
 const Capabilities = () => {
+  const videoRefs: Record<string, React.RefObject<HTMLVideoElement>> = {
+    card1: useRef<HTMLVideoElement>(null!),
+    card2: useRef<HTMLVideoElement>(null!),
+    card3: useRef<HTMLVideoElement>(null!),
+    card4: useRef<HTMLVideoElement>(null!),
+  };
+
+  const reverseAnimation: Record<string, number | null> = {
+    card1: null,
+    card2: null,
+    card3: null,
+    card4: null,
+  };
+
+  const handleMouseEnter = (key: string) => {
+    const video = videoRefs[key].current;
+    if (video) {
+      if (reverseAnimation[key]) {
+        cancelAnimationFrame(reverseAnimation[key]!);
+        reverseAnimation[key] = null;
+      }
+      video.playbackRate = 1;
+      video.play();
+    }
+  };
+
+  const handleMouseLeave = (key: string) => {
+    const video = videoRefs[key].current;
+    if (video) {
+      video.pause();
+
+      const step = () => {
+        if (!videoRefs[key].current) return;
+        const v = videoRefs[key].current!;
+        if (v.currentTime > 0.05) {
+          v.currentTime -= 0.03;
+          reverseAnimation[key] = requestAnimationFrame(step);
+        } else {
+          v.currentTime = 0;
+          cancelAnimationFrame(reverseAnimation[key]!);
+          reverseAnimation[key] = null;
+        }
+      };
+
+      reverseAnimation[key] = requestAnimationFrame(step);
+    }
+  };
+
   return (
     <section className="relative bg-[#030210]">
       <div className="pointer-events-none absolute top-[-100px] left-0 h-auto max-w-[600px]">
@@ -21,69 +71,93 @@ const Capabilities = () => {
             Maximize speed, control, and connectivity in your trades
           </p>
         </div>
-        <div className="flex flex-col gap-6 md:flex-row">
+        <div className="flex flex-col gap-6 md:h-[450px] md:flex-row">
           <div className="flex flex-col gap-6 md:w-[55%]">
-            <div className="relative overflow-hidden rounded-lg border border-transparent bg-gradient-to-b from-white/5 to-white/[2%] p-8 transition-all duration-500 hover:border-[rgba(56,189,248,0.4)] hover:bg-[linear-gradient(180deg,rgba(56,189,248,0.08)_0%,rgba(56,189,248,0.01)_100%)] hover:shadow-lg">
+            <div
+              className="relative overflow-hidden rounded-lg border border-transparent bg-gradient-to-b from-white/5 to-white/[2%] p-8 transition-all duration-500 max-md:h-[200px]"
+              onMouseEnter={() => handleMouseEnter("card1")}
+              onMouseLeave={() => handleMouseLeave("card1")}
+            >
               <div className="relative z-10 mb-16 flex w-[60%] flex-col gap-3">
                 <h2 className="text-xl">Turnkey</h2>
                 <p className="text-sm text-[#D5F6FE]/50">
                   OOGA Is Non-Custodial and has no access to user private keys
                 </p>
               </div>
-              <Image
-                className="absolute right-0 bottom-0 h-[175px] w-[175px] object-contain md:bottom-[-8%]"
-                src="/home/capability/1.png"
-                alt="icon"
-                height={500}
-                width={500}
-              />
+              <video
+                ref={videoRefs.card1}
+                className="absolute top-0 right-0 h-full w-full object-fill"
+                muted
+                preload="auto"
+                playsInline
+              >
+                <source src="/videos/CapabilitiesCard1.mp4" type="video/mp4" />
+              </video>
             </div>
-            <div className="relative overflow-hidden rounded-lg border border-transparent bg-gradient-to-b from-white/5 to-white/[2%] p-8 transition-all duration-500 hover:border-[rgba(56,189,248,0.4)] hover:bg-[linear-gradient(180deg,rgba(56,189,248,0.08)_0%,rgba(56,189,248,0.01)_100%)] hover:shadow-lg">
+            <div
+              className="relative overflow-hidden rounded-lg border border-transparent bg-gradient-to-b from-white/5 to-white/[2%] p-8 transition-all duration-500 max-md:h-[200px]"
+              onMouseEnter={() => handleMouseEnter("card2")}
+              onMouseLeave={() => handleMouseLeave("card2")}
+            >
               <div className="relative z-10 mb-16 flex w-[60%] flex-col gap-3 md:mb-[110px]">
                 <h2 className="text-xl">Multi-Wallet Support</h2>
                 <p className="text-sm text-[#D5F6FE]/50">
                   Buy and sell simultaneously to elevate your trades
                 </p>
               </div>
-              <Image
-                className="absolute right-0 bottom-0 h-[175px] w-[175px] object-contain md:bottom-[-8%]"
-                src="/home/capability/2.png"
-                alt="icon"
-                height={500}
-                width={500}
-              />
+              <video
+                ref={videoRefs.card2}
+                className="absolute top-0 right-0 h-full w-full object-fill"
+                muted
+                preload="auto"
+                playsInline
+              >
+                <source src="/videos/CapabilitiesCard2.mp4" type="video/mp4" />
+              </video>
             </div>
           </div>
           <div className="flex flex-col gap-6 md:w-[45%]">
-            <div className="relative overflow-hidden rounded-lg border border-transparent bg-gradient-to-b from-white/5 to-white/[2%] p-8 transition-all duration-500 hover:border-[rgba(56,189,248,0.4)] hover:bg-[linear-gradient(180deg,rgba(56,189,248,0.08)_0%,rgba(56,189,248,0.01)_100%)] hover:shadow-lg">
+            <div
+              className="relative overflow-hidden rounded-lg border border-transparent bg-gradient-to-b from-white/5 to-white/[2%] p-8 transition-all duration-500 max-md:h-[200px]"
+              onMouseEnter={() => handleMouseEnter("card3")}
+              onMouseLeave={() => handleMouseLeave("card3")}
+            >
               <div className="relative z-10 mb-16 flex w-[60%] flex-col gap-3 md:mb-[110px]">
                 <h2 className="text-xl">Dedicated Nodes</h2>
                 <p className="text-sm text-[#D5F6FE]/50">
                   Trade efficiently with the fastest fills
                 </p>
               </div>
-              <Image
-                className="absolute right-0 bottom-0 h-[175px] w-[175px] object-contain md:bottom-[-8%]"
-                src="/home/capability/3.png"
-                alt="icon"
-                height={500}
-                width={500}
-              />
+              <video
+                ref={videoRefs.card3}
+                className="absolute top-0 right-0 h-full w-full object-fill"
+                muted
+                preload="auto"
+                playsInline
+              >
+                <source src="/videos/CapabilitiesCard3.mp4" type="video/mp4" />
+              </video>
             </div>
-            <div className="relative overflow-hidden rounded-lg border border-transparent bg-gradient-to-b from-white/5 to-white/[2%] p-8 transition-all duration-500 hover:border-[rgba(56,189,248,0.4)] hover:bg-[linear-gradient(180deg,rgba(56,189,248,0.08)_0%,rgba(56,189,248,0.01)_100%)] hover:shadow-lg">
+            <div
+              className="relative overflow-hidden rounded-lg border border-transparent bg-gradient-to-b from-white/5 to-white/[2%] p-8 transition-all duration-500 max-md:h-[200px]"
+              onMouseEnter={() => handleMouseEnter("card4")}
+              onMouseLeave={() => handleMouseLeave("card4")}
+            >
               <div className="relative z-10 mb-16 flex w-[60%] flex-col gap-3">
                 <h2 className="text-xl">Social Layer</h2>
                 <p className="text-sm text-[#D5F6FE]/50">
                   First trading-social platform
                 </p>
               </div>
-              <Image
-                className="absolute right-0 bottom-0 h-[175px] w-[175px] object-contain md:bottom-[-8%]"
-                src="/home/capability/4.png"
-                alt="icon"
-                height={500}
-                width={500}
-              />
+              <video
+                ref={videoRefs.card4}
+                className="absolute top-0 right-0 h-full w-full object-fill"
+                muted
+                preload="auto"
+                playsInline
+              >
+                <source src="/videos/CapabilitiesCard4.mp4" type="video/mp4" />
+              </video>
             </div>
           </div>
         </div>
