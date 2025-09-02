@@ -23,7 +23,7 @@ const Grow = () => {
       scrollTrigger: {
         trigger: wordRefs.current[0]?.parentElement,
         start: "top 80%",
-        end: "top 50%",
+        end: "top 30%",
         scrub: 1,
       },
     });

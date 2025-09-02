@@ -71,10 +71,10 @@ const Capabilities = () => {
             Maximize speed, control, and connectivity in your trades
           </p>
         </div>
-        <div className="flex flex-col gap-6 md:h-[450px] md:flex-row">
+        <div className="flex flex-col gap-6 md:h-[500px] md:flex-row">
           <div className="flex flex-col gap-6 md:w-[55%]">
             <div
-              className="relative overflow-hidden rounded-lg border border-transparent bg-gradient-to-b from-white/5 to-white/[2%] p-8 transition-all duration-500 max-md:h-[200px]"
+              className="relative overflow-hidden rounded-lg border border-transparent bg-gradient-to-b bg-[linear-gradient(180deg,rgba(56,189,248,0.08)_0%,rgba(56,189,248,0.01)_100%)] from-white/5 to-white/[2%] p-8 transition-all duration-500 max-md:h-[200px] max-md:border max-md:border-[rgba(56,189,248,0.40)]"
               onMouseEnter={() => handleMouseEnter("card1")}
               onMouseLeave={() => handleMouseLeave("card1")}
             >
@@ -86,16 +86,20 @@ const Capabilities = () => {
               </div>
               <video
                 ref={videoRefs.card1}
-                className="absolute top-0 right-0 h-full w-full object-fill"
+                className="absolute top-0 right-0 h-full w-full object-fill max-md:object-cover max-md:object-[calc(100%+50px)]"
                 muted
                 preload="auto"
                 playsInline
               >
-                <source src="/videos/CapabilitiesCard1.mp4" type="video/mp4" />
+                <source src="/videos/CapabilitiesCard1.mp4" type="video/mp4" />{" "}
+                <source
+                  src="/videos/CapabilitiesCard1.webm"
+                  type="video/webm"
+                />
               </video>
             </div>
             <div
-              className="relative overflow-hidden rounded-lg border border-transparent bg-gradient-to-b from-white/5 to-white/[2%] p-8 transition-all duration-500 max-md:h-[200px]"
+              className="relative overflow-hidden rounded-lg border border-transparent bg-gradient-to-b bg-[linear-gradient(180deg,rgba(56,189,248,0.08)_0%,rgba(56,189,248,0.01)_100%)] from-white/5 to-white/[2%] p-8 transition-all duration-500 max-md:h-[200px] max-md:border max-md:border-[rgba(56,189,248,0.40)]"
               onMouseEnter={() => handleMouseEnter("card2")}
               onMouseLeave={() => handleMouseLeave("card2")}
             >
@@ -107,18 +111,22 @@ const Capabilities = () => {
               </div>
               <video
                 ref={videoRefs.card2}
-                className="absolute top-0 right-0 h-full w-full object-fill"
+                className="absolute top-0 right-0 h-full w-full object-fill max-md:object-cover max-md:object-[calc(100%+50px)]"
                 muted
                 preload="auto"
                 playsInline
               >
-                <source src="/videos/CapabilitiesCard2.mp4" type="video/mp4" />
+                <source src="/videos/CapabilitiesCard2.mp4" type="video/mp4" />{" "}
+                <source
+                  src="/videos/CapabilitiesCard2.webm"
+                  type="video/webm"
+                />
               </video>
             </div>
           </div>
-          <div className="flex flex-col gap-6 md:w-[45%]">
+          <div className="flex flex-col gap-6 md:h-[500px] md:w-[45%]">
             <div
-              className="relative overflow-hidden rounded-lg border border-transparent bg-gradient-to-b from-white/5 to-white/[2%] p-8 transition-all duration-500 max-md:h-[200px]"
+              className="relative overflow-hidden rounded-lg border border-transparent bg-gradient-to-b bg-[linear-gradient(180deg,rgba(56,189,248,0.08)_0%,rgba(56,189,248,0.01)_100%)] from-white/5 to-white/[2%] p-8 transition-all duration-500 max-md:h-[200px] max-md:border max-md:border-[rgba(56,189,248,0.40)]"
               onMouseEnter={() => handleMouseEnter("card3")}
               onMouseLeave={() => handleMouseLeave("card3")}
             >
@@ -130,16 +138,20 @@ const Capabilities = () => {
               </div>
               <video
                 ref={videoRefs.card3}
-                className="absolute top-0 right-0 h-full w-full object-fill"
+                className="absolute top-0 right-0 h-full w-full object-fill max-md:object-cover"
                 muted
                 preload="auto"
                 playsInline
               >
-                <source src="/videos/CapabilitiesCard3.mp4" type="video/mp4" />
+                <source src="/videos/CapabilitiesCard3.mp4" type="video/mp4" />{" "}
+                <source
+                  src="/videos/CapabilitiesCard3.webm"
+                  type="video/webm"
+                />
               </video>
             </div>
             <div
-              className="relative overflow-hidden rounded-lg border border-transparent bg-gradient-to-b from-white/5 to-white/[2%] p-8 transition-all duration-500 max-md:h-[200px]"
+              className="relative overflow-hidden rounded-lg border border-transparent bg-gradient-to-b bg-[linear-gradient(180deg,rgba(56,189,248,0.08)_0%,rgba(56,189,248,0.01)_100%)] from-white/5 to-white/[2%] p-8 transition-all duration-500 max-md:h-[200px] max-md:border max-md:border-[rgba(56,189,248,0.40)]"
               onMouseEnter={() => handleMouseEnter("card4")}
               onMouseLeave={() => handleMouseLeave("card4")}
             >
@@ -151,12 +163,16 @@ const Capabilities = () => {
               </div>
               <video
                 ref={videoRefs.card4}
-                className="absolute top-0 right-0 h-full w-full object-fill"
+                className="absolute top-0 right-0 h-full w-full object-fill max-md:object-cover max-md:object-[calc(100%+50px)]"
                 muted
                 preload="auto"
                 playsInline
               >
-                <source src="/videos/CapabilitiesCard4.mp4" type="video/mp4" />
+                <source src="/videos/CapabilitiesCard4.mp4" type="video/mp4" />{" "}
+                <source
+                  src="/videos/CapabilitiesCard4.webm"
+                  type="video/webm"
+                />
               </video>
             </div>
           </div>
