@@ -26,16 +26,12 @@ const Community = () => {
   const videoRefs = useRef<HTMLVideoElement[]>([]);
   const reverseAnimations = useRef<(number | null)[]>([null, null, null]);
 
-  // Завантажуємо відео при монтуванні компонента
   useEffect(() => {
-    videoRefs.current.forEach((video, index) => {
+    videoRefs.current.forEach((video) => {
       if (video) {
-        // Встановлюємо початковий кадр
         video.currentTime = 0;
-        // Завантажуємо відео
         video.load();
 
-        // Для мобільних пристроїв - показуємо перший кадр
         const handleLoadedData = () => {
           video.currentTime = 0;
         };
@@ -57,9 +53,8 @@ const Community = () => {
         reverseAnimations.current[index] = null;
       }
       video.playbackRate = 1;
-      video.currentTime = 0; // Починаємо з початку
+      video.currentTime = 0;
       video.play().catch(() => {
-        // Якщо автоплей заблокований, принаймні показуємо перший кадр
         video.currentTime = 0;
       });
     }

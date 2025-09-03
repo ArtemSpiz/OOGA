@@ -19,17 +19,13 @@ const Capabilities = () => {
     card4: null,
   };
 
-  // Завантажуємо відео при монтуванні компонента
   useEffect(() => {
     Object.keys(videoRefs).forEach((key) => {
       const video = videoRefs[key].current;
       if (video) {
-        // Встановлюємо початковий кадр
         video.currentTime = 0;
-        // Завантажуємо відео
         video.load();
 
-        // Для мобільних пристроїв - показуємо перший кадр
         const handleLoadedData = () => {
           video.currentTime = 0;
         };
@@ -51,9 +47,8 @@ const Capabilities = () => {
         reverseAnimation[key] = null;
       }
       video.playbackRate = 1;
-      video.currentTime = 0; // Починаємо з початку
+      video.currentTime = 0;
       video.play().catch(() => {
-        // Якщо автоплей заблокований, принаймні показуємо перший кадр
         video.currentTime = 0;
       });
     }
