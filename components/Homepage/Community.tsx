@@ -1,5 +1,6 @@
+"use client";
 import Image from "next/image";
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import LightLeft from "/public/comLightLeft.png";
 import LightRight from "/public/comLightRight.png";
 
@@ -23,11 +24,44 @@ const Community = () => {
   ];
 
   const videoRefs = useRef<HTMLVideoElement[]>([]);
+  const reverseAnimations = useRef<(number | null)[]>([null, null, null]);
+
+  // Завантажуємо відео при монтуванні компонента
+  useEffect(() => {
+    videoRefs.current.forEach((video, index) => {
+      if (video) {
+        // Встановлюємо початковий кадр
+        video.currentTime = 0;
+        // Завантажуємо відео
+        video.load();
+
+        // Для мобільних пристроїв - показуємо перший кадр
+        const handleLoadedData = () => {
+          video.currentTime = 0;
+        };
+
+        video.addEventListener("loadeddata", handleLoadedData);
+
+        return () => {
+          video.removeEventListener("loadeddata", handleLoadedData);
+        };
+      }
+    });
+  }, []);
 
   const handleMouseEnter = (index: number) => {
     const video = videoRefs.current[index];
     if (video) {
-      video.play();
+      if (reverseAnimations.current[index]) {
+        cancelAnimationFrame(reverseAnimations.current[index]!);
+        reverseAnimations.current[index] = null;
+      }
+      video.playbackRate = 1;
+      video.currentTime = 0; // Починаємо з початку
+      video.play().catch(() => {
+        // Якщо автоплей заблокований, принаймні показуємо перший кадр
+        video.currentTime = 0;
+      });
     }
   };
 
@@ -35,14 +69,24 @@ const Community = () => {
     const video = videoRefs.current[index];
     if (!video) return;
 
-    const interval = setInterval(() => {
-      if (video.currentTime <= 0) {
-        video.pause();
-        clearInterval(interval);
+    video.pause();
+
+    const step = () => {
+      if (!videoRefs.current[index]) return;
+      const v = videoRefs.current[index];
+      if (v.currentTime > 0.05) {
+        v.currentTime -= 0.03;
+        reverseAnimations.current[index] = requestAnimationFrame(step);
       } else {
-        video.currentTime -= 0.005;
+        v.currentTime = 0;
+        if (reverseAnimations.current[index]) {
+          cancelAnimationFrame(reverseAnimations.current[index]!);
+          reverseAnimations.current[index] = null;
+        }
       }
-    }, 12);
+    };
+
+    reverseAnimations.current[index] = requestAnimationFrame(step);
   };
 
   return (
@@ -83,9 +127,9 @@ const Community = () => {
                 }}
                 className="mt-auto w-full object-cover"
                 muted
-                loop
                 playsInline
-                preload="auto"
+                preload="metadata"
+                poster=""
               >
                 <source src={elem.video} type="video/mp4" />
               </video>
