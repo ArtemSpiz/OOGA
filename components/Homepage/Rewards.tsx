@@ -52,24 +52,13 @@ const Rewards = () => {
             })}
           </div>
         </div>
-        {/* <Image
-          className="w-full md:hidden"
-          src="/home/reward-mobile.png"
-          alt="rewards"
-          width={1366}
-          height={689}
-        /> */}
-        <video className="w-[50%] max-md:w-[120%]" autoPlay muted loop playsInline>
-          <source src="/videos/RewardsVideo.mp4" type="video/mp4" />
-        </video>
+        <div className="relative w-[50%] max-md:w-[100%]">
+          <video className="w-[100%]" autoPlay muted loop playsInline>
+            <source src="/videos/RewardsVideo.mp4" type="video/mp4" />
+          </video>
 
-        {/* <Image
-          className="hidden w-[60%] md:block"
-          src="/home/reward.png"
-          alt="rewards"
-          width={1366}
-          height={689}
-        /> */}
+          <div className="pointer-events-none absolute top-0 left-0 z-20 hidden h-full w-[10%] bg-gradient-to-r from-[#030210] via-[#030210]/80 to-transparent md:flex"></div>
+        </div>
       </div>
     </section>
   );
