@@ -1,5 +1,5 @@
 "use client";
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import Image from "next/image";
 import LightLeft from "/public/advancedLightLeft.png";
 import LightRight from "/public/advancedLightRight.png";
@@ -19,6 +19,30 @@ const Capabilities = () => {
     card4: null,
   };
 
+  // Завантажуємо відео при монтуванні компонента
+  useEffect(() => {
+    Object.keys(videoRefs).forEach((key) => {
+      const video = videoRefs[key].current;
+      if (video) {
+        // Встановлюємо початковий кадр
+        video.currentTime = 0;
+        // Завантажуємо відео
+        video.load();
+
+        // Для мобільних пристроїв - показуємо перший кадр
+        const handleLoadedData = () => {
+          video.currentTime = 0;
+        };
+
+        video.addEventListener("loadeddata", handleLoadedData);
+
+        return () => {
+          video.removeEventListener("loadeddata", handleLoadedData);
+        };
+      }
+    });
+  }, []);
+
   const handleMouseEnter = (key: string) => {
     const video = videoRefs[key].current;
     if (video) {
@@ -27,7 +51,11 @@ const Capabilities = () => {
         reverseAnimation[key] = null;
       }
       video.playbackRate = 1;
-      video.play();
+      video.currentTime = 0; // Починаємо з початку
+      video.play().catch(() => {
+        // Якщо автоплей заблокований, принаймні показуємо перший кадр
+        video.currentTime = 0;
+      });
     }
   };
 
@@ -89,10 +117,10 @@ const Capabilities = () => {
                 className="absolute top-0 right-0 h-full w-full object-fill max-md:object-cover max-sm:object-[calc(100%+70px)]"
                 muted
                 playsInline
-                loop
-                preload="auto"
+                preload="metadata"
+                poster=""
               >
-                <source src="/videos/CapabilitiesCard1.mp4" type="video/mp4" />{" "}
+                <source src="/videos/CapabilitiesCard1.mp4" type="video/mp4" />
                 <source
                   src="/videos/CapabilitiesCard1.webm"
                   type="video/webm"
@@ -115,10 +143,10 @@ const Capabilities = () => {
                 className="absolute top-0 right-0 h-full w-full object-fill max-md:object-cover max-md:object-[calc(100%+50px)]"
                 muted
                 playsInline
-                loop
-                preload="auto"
+                preload="metadata"
+                poster=""
               >
-                <source src="/videos/CapabilitiesCard2.mp4" type="video/mp4" />{" "}
+                <source src="/videos/CapabilitiesCard2.mp4" type="video/mp4" />
                 <source
                   src="/videos/CapabilitiesCard2.webm"
                   type="video/webm"
@@ -143,10 +171,10 @@ const Capabilities = () => {
                 className="absolute top-0 right-0 h-full w-full object-fill max-md:object-cover"
                 muted
                 playsInline
-                loop
-                preload="auto"
+                preload="metadata"
+                poster=""
               >
-                <source src="/videos/CapabilitiesCard3.mp4" type="video/mp4" />{" "}
+                <source src="/videos/CapabilitiesCard3.mp4" type="video/mp4" />
                 <source
                   src="/videos/CapabilitiesCard3.webm"
                   type="video/webm"
@@ -169,10 +197,10 @@ const Capabilities = () => {
                 className="absolute top-0 right-0 h-full w-full object-fill max-md:object-cover max-md:object-[calc(100%+50px)]"
                 muted
                 playsInline
-                loop
-                preload="auto"
+                preload="metadata"
+                poster=""
               >
-                <source src="/videos/CapabilitiesCard4.mp4" type="video/mp4" />{" "}
+                <source src="/videos/CapabilitiesCard4.mp4" type="video/mp4" />
                 <source
                   src="/videos/CapabilitiesCard4.webm"
                   type="video/webm"
