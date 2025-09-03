@@ -6,11 +6,11 @@
   --spacing-custom-container: 1440px;
 }
 
-body {
+/* body {
   max-width: 100vw;
   overflow-x: hidden;
 }
 
 html {
   scroll-behavior: smooth;
-}
+} */

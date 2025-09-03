@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="relative bg-[#030210] py-20 md:py-[100px]">
+    <footer className="relative max-w-[100vw] overflow-hidden bg-[#030210] py-20 md:py-[100px]">
       <div className="flex flex-col gap-14 px-6 md:w-full md:flex-row md:justify-between">
         <Image
           className="h-[44px] w-[150px] object-contain"
@@ -48,7 +48,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="pointer-events-none absolute bottom-0 left-1/2 z-0 w-[1440px] -translate-x-1/2">
+      <div className="pointer-events-none absolute bottom-0 left-1/2 z-0 w-[1440px] max-w-[100vw] -translate-x-1/2">
         <Image height={100} width={1440} src="/home/footerBg.png" alt=" " />
       </div>
     </footer>
