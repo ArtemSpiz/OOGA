@@ -88,8 +88,9 @@ const Capabilities = () => {
                 ref={videoRefs.card1}
                 className="absolute top-0 right-0 h-full w-full object-fill max-md:object-cover max-sm:object-[calc(100%+70px)]"
                 muted
-                preload="auto"
                 playsInline
+                loop
+                preload="auto"
               >
                 <source src="/videos/CapabilitiesCard1.mp4" type="video/mp4" />{" "}
                 <source
@@ -113,8 +114,9 @@ const Capabilities = () => {
                 ref={videoRefs.card2}
                 className="absolute top-0 right-0 h-full w-full object-fill max-md:object-cover max-md:object-[calc(100%+50px)]"
                 muted
-                preload="auto"
                 playsInline
+                loop
+                preload="auto"
               >
                 <source src="/videos/CapabilitiesCard2.mp4" type="video/mp4" />{" "}
                 <source
@@ -140,8 +142,9 @@ const Capabilities = () => {
                 ref={videoRefs.card3}
                 className="absolute top-0 right-0 h-full w-full object-fill max-md:object-cover"
                 muted
-                preload="auto"
                 playsInline
+                loop
+                preload="auto"
               >
                 <source src="/videos/CapabilitiesCard3.mp4" type="video/mp4" />{" "}
                 <source
@@ -165,8 +168,9 @@ const Capabilities = () => {
                 ref={videoRefs.card4}
                 className="absolute top-0 right-0 h-full w-full object-fill max-md:object-cover max-md:object-[calc(100%+50px)]"
                 muted
-                preload="auto"
                 playsInline
+                loop
+                preload="auto"
               >
                 <source src="/videos/CapabilitiesCard4.mp4" type="video/mp4" />{" "}
                 <source
