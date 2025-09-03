@@ -6,15 +6,15 @@ import { useState } from "react";
 
 const Header = () => {
   const navigations = [
-    { name: "Infrastructure", href: "/" },
-    { name: "Rewards", href: "/" },
+    { name: "Tools", href: "#tools" },
+    { name: "Rewards", href: "#rewards" },
     { name: "Community", href: "/" },
     { name: "Docs", href: "/" },
   ];
 
   const navigationsMob = [
-    { name: "Advanced Infrastructure", href: "/" },
-    { name: "Rewards", href: "/" },
+    { name: "Tools", href: "#tools" },
+    { name: "Rewards", href: "#rewards" },
     { name: "Community", href: "/" },
     { name: "Docs", href: "/" },
   ];
@@ -35,6 +35,7 @@ const Header = () => {
             {navigationsMob.map((elem, index) => {
               return (
                 <Link
+                  onClick={() => setIsActive(false)}
                   className="text-center font-light"
                   key={index}
                   href={elem.href}

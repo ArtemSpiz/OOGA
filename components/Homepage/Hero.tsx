@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Button from "../Common/Button";
 import { UpRightArrow } from "../Common/Icons";
 import Spline from "@splinetool/react-spline";
@@ -10,14 +11,19 @@ const Hero = () => {
     },
     {
       heading: "Dedicated Nodes",
+      desc: "OOGA Is Non-Custodial and has no access to user private keys 2",
     },
     {
       heading: "Multi-Wallet Support",
+      desc: "OOGA Is Non-Custodial and has no access to user private keys 3",
     },
     {
       heading: "Social Layer",
+      desc: "OOGA Is Non-Custodial and has no access to user private keys 4",
     },
   ];
+
+  const [activeIndex, setActiveIndex] = useState(0);
 
   return (
     <>
@@ -47,15 +53,32 @@ const Hero = () => {
         </div>
         <div className="flex flex-col rounded-lg p-6 backdrop-blur-[36px] md:mt-auto">
           {points.map((elem, index) => {
+            const isActive = activeIndex === index;
             return (
               <div
                 key={index}
-                className="flex flex-col gap-2 border-b border-white/30 py-3 last:border-b-0"
+                onClick={() => setActiveIndex(index)}
+                className="flex cursor-pointer flex-col border-b border-white/30 py-3 last:border-b-0"
               >
-                <h2 className="text-lg">{elem.heading}</h2>
-                {elem.desc ? (
-                  <p className="text-sm font-light">{elem.desc}</p>
-                ) : null}
+                <h2
+                  className={`text-lg transition-colors duration-300 ${
+                    isActive ? "font-semibold text-white" : "text-gray-300"
+                  }`}
+                >
+                  {elem.heading}
+                </h2>
+
+                <div
+                  className={`grid transition-all duration-500 ease-in-out ${
+                    isActive
+                      ? "translate-y-0 grid-rows-[1fr] opacity-100"
+                      : "-translate-y-2 grid-rows-[0fr] opacity-0"
+                  }`}
+                >
+                  <p className="overflow-hidden text-sm font-light text-gray-200 transition-opacity duration-500 ease-in-out">
+                    {elem.desc}
+                  </p>
+                </div>
               </div>
             );
           })}

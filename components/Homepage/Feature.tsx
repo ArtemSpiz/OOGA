@@ -43,7 +43,7 @@ const Feature = () => {
   }, []);
 
   return (
-    <section className="bg-[#030210]">
+    <section id="tools" className="bg-[#030210]">
       <div className="max-w-custom-container mx-auto flex flex-col gap-11 px-6 py-[60px] md:flex-row md:gap-[70px] md:px-12 md:pt-[120px] md:pb-[80px]">
         <div className="flex flex-col gap-12 md:w-[420px]">
           <div className="flex flex-col gap-6 text-center md:text-left">

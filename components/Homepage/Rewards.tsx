@@ -11,7 +11,7 @@ const Rewards = () => {
     {
       Icon: Coin,
       heading: "Cashback",
-      desc: "Start earings immeddiately with up to 35% Cashback",
+      desc: "Start earnings immediately with up to 35% Cashback",
     },
     {
       Icon: Relation,
@@ -21,7 +21,7 @@ const Rewards = () => {
   ];
 
   return (
-    <section className="bg-[#030210]">
+    <section id="rewards" className="bg-[#030210]">
       <div className="max-w-custom-container mx-auto flex flex-col justify-between gap-[84px] pt-[60px] md:flex-row md:gap-11 md:px-12 md:pt-[100px]">
         <div className="flex flex-col gap-16 px-6 md:w-[40%] md:px-0">
           <div className="flex flex-col gap-6 text-center md:text-left">
@@ -55,9 +55,14 @@ const Rewards = () => {
         <div className="relative w-[50%] max-md:w-[100%]">
           <video className="w-[100%]" autoPlay muted loop playsInline>
             <source src="/videos/RewardsVideo.mp4" type="video/mp4" />
-          </video>
-
-          <div className="pointer-events-none absolute top-0 left-0 z-20 hidden h-full w-[10%] bg-gradient-to-r from-[#030210] via-[#030210]/80 to-transparent md:flex"></div>
+          </video>{" "}
+          <div
+            className="pointer-events-none absolute inset-0"
+            style={{
+              background:
+                "radial-gradient(circle, rgba(3,2,16,0) 40%, #030210 100%)",
+            }}
+          />{" "}
         </div>
       </div>
     </section>

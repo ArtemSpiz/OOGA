@@ -8,18 +8,21 @@ const Community = () => {
   const details = [
     {
       heading: "Alpha",
-      desc: "Integrated scanning bots with advanced filters so you never miss a call",
+      desc: "Integrated token broadcasting with filters, so you never miss a call",
       video: "/videos/CommunityCard1.mp4",
+      subtitle: "Integrated scanning bots",
     },
     {
       heading: "Chats",
       desc: "Collaborate with OOGA's custom social network",
       video: "/videos/CommunityCard2.mp4",
+      subtitle: "Connect in a dedicated network",
     },
     {
       heading: "Clans",
       desc: "Create your own trading groups and grow together",
       video: "/videos/CommunityCard3.mp4",
+      subtitle: "Grow Stronger as a Clan",
     },
   ];
 
@@ -86,10 +89,10 @@ const Community = () => {
 
   return (
     <section className="relative bg-[#030210]">
-      <div className="pointer-events-none absolute top-0 left-0 h-auto max-w-[600px]">
+      <div className="pointer-events-none absolute top-0 left-0 h-auto max-w-[500px]">
         <Image alt="LightLeft" src={LightLeft} />
       </div>
-      <div className="pointer-events-none absolute top-0 right-0 h-auto max-w-[611px] max-md:hidden">
+      <div className="pointer-events-none absolute top-0 right-0 h-auto max-w-[511px] max-md:hidden">
         <Image alt="LightRight" src={LightRight} />
       </div>
       <div className="mx-auto flex max-w-[890px] flex-col gap-14 px-6 py-[80px]">
@@ -106,9 +109,9 @@ const Community = () => {
           {details.map((elem, index) => (
             <div
               key={index}
-              className="flex flex-col gap-4 overflow-hidden rounded-lg bg-gradient-to-b from-white/5 to-white/[2%]"
-              onMouseEnter={() => handleMouseEnter(index)}
-              onMouseLeave={() => handleMouseLeave(index)}
+              className="flex relative flex-col gap-4 overflow-hidden rounded-lg bg-gradient-to-b from-white/5 to-white/[2%]"
+              // onMouseEnter={() => handleMouseEnter(index)}
+              // onMouseLeave={() => handleMouseLeave(index)}
             >
               <div className="flex flex-col gap-3 px-6 pt-6">
                 <h2 className="text-center text-lg">{elem.heading}</h2>
@@ -125,9 +128,15 @@ const Community = () => {
                 playsInline
                 preload="metadata"
                 poster=""
+                autoPlay
+                loop
               >
                 <source src={elem.video} type="video/mp4" />
               </video>
+
+              <div className="absolute w-[100%] z-10 right-1/2 bottom-[15px] translate-x-1/2 text-center font-['DM_Mono'] text-[10px] leading-[107%] font-light text-[#A0AEC0] uppercase">
+                {elem.subtitle}
+              </div>
             </div>
           ))}
         </div>

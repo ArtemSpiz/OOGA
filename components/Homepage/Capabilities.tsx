@@ -98,8 +98,8 @@ const Capabilities = () => {
           <div className="flex flex-col gap-6 md:w-[498px]">
             <div
               className="relative overflow-hidden rounded-lg border border-transparent bg-gradient-to-b bg-[linear-gradient(180deg,rgba(56,189,248,0.08)_0%,rgba(56,189,248,0.01)_100%)] from-white/5 to-white/[2%] p-8 transition-all duration-500 max-md:h-[200px] max-md:border max-md:border-[rgba(56,189,248,0.40)] md:h-[159.523px]"
-              onMouseEnter={() => handleMouseEnter("card1")}
-              onMouseLeave={() => handleMouseLeave("card1")}
+              // onMouseEnter={() => handleMouseEnter("card1")}
+              // onMouseLeave={() => handleMouseLeave("card1")}
             >
               <div className="relative z-10 mb-16 flex w-[60%] flex-col gap-3">
                 <h2 className="text-xl">Turnkey</h2>
@@ -114,6 +114,8 @@ const Capabilities = () => {
                 playsInline
                 preload="metadata"
                 poster=""
+                autoPlay
+                loop
               >
                 <source src="/videos/CapabilitiesCard1.mp4" type="video/mp4" />
                 <source
@@ -124,8 +126,8 @@ const Capabilities = () => {
             </div>
             <div
               className="relative overflow-hidden rounded-lg border border-transparent bg-gradient-to-b bg-[linear-gradient(180deg,rgba(56,189,248,0.08)_0%,rgba(56,189,248,0.01)_100%)] from-white/5 to-white/[2%] p-8 transition-all duration-500 max-md:h-[200px] max-md:border max-md:border-[rgba(56,189,248,0.40)] md:h-[210.058px]"
-              onMouseEnter={() => handleMouseEnter("card2")}
-              onMouseLeave={() => handleMouseLeave("card2")}
+              // onMouseEnter={() => handleMouseEnter("card2")}
+              // onMouseLeave={() => handleMouseLeave("card2")}
             >
               <div className="relative z-10 mb-16 flex w-[60%] flex-col gap-3 md:mb-[110px]">
                 <h2 className="text-xl">Multi-Wallet Support</h2>
@@ -140,6 +142,8 @@ const Capabilities = () => {
                 playsInline
                 preload="metadata"
                 poster=""
+                autoPlay
+                loop
               >
                 <source src="/videos/CapabilitiesCard2.mp4" type="video/mp4" />
                 <source
@@ -152,8 +156,8 @@ const Capabilities = () => {
           <div className="flex flex-col gap-6 md:w-[390px]">
             <div
               className="relative overflow-hidden rounded-lg border border-transparent bg-gradient-to-b bg-[linear-gradient(180deg,rgba(56,189,248,0.08)_0%,rgba(56,189,248,0.01)_100%)] from-white/5 to-white/[2%] p-8 transition-all duration-500 max-md:h-[200px] max-md:border max-md:border-[rgba(56,189,248,0.40)] md:h-[209.058px]"
-              onMouseEnter={() => handleMouseEnter("card3")}
-              onMouseLeave={() => handleMouseLeave("card3")}
+              // onMouseEnter={() => handleMouseEnter("card3")}
+              // onMouseLeave={() => handleMouseLeave("card3")}
             >
               <div className="relative z-10 mb-16 flex w-[60%] flex-col gap-3 md:mb-[110px]">
                 <h2 className="text-xl">Dedicated Nodes</h2>
@@ -168,6 +172,8 @@ const Capabilities = () => {
                 playsInline
                 preload="metadata"
                 poster=""
+                autoPlay
+                loop
               >
                 <source src="/videos/CapabilitiesCard3.mp4" type="video/mp4" />
                 <source
@@ -178,8 +184,8 @@ const Capabilities = () => {
             </div>
             <div
               className="relative overflow-hidden rounded-lg border border-transparent bg-gradient-to-b bg-[linear-gradient(180deg,rgba(56,189,248,0.08)_0%,rgba(56,189,248,0.01)_100%)] from-white/5 to-white/[2%] p-8 transition-all duration-500 max-md:h-[200px] max-md:border max-md:border-[rgba(56,189,248,0.40)] md:h-[159.523px]"
-              onMouseEnter={() => handleMouseEnter("card4")}
-              onMouseLeave={() => handleMouseLeave("card4")}
+              // onMouseEnter={() => handleMouseEnter("card4")}
+              // onMouseLeave={() => handleMouseLeave("card4")}
             >
               <div className="relative z-10 mb-16 flex w-[60%] flex-col gap-3">
                 <h2 className="text-xl">Social Layer</h2>
@@ -194,6 +200,8 @@ const Capabilities = () => {
                 playsInline
                 preload="metadata"
                 poster=""
+                autoPlay
+                loop
               >
                 <source src="/videos/CapabilitiesCard4.mp4" type="video/mp4" />
                 <source
