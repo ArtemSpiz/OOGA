@@ -47,7 +47,7 @@ const Feature = () => {
 
   return (
     <section id="tools" className="bg-[#030210]">
-      <div className="max-w-custom-container mx-auto flex flex-col gap-11 px-6 py-[60px] md:flex-row md:gap-[70px] md:px-12 md:pt-[120px] md:pb-[80px]">
+      <div className="max-w-custom-container mx-auto flex flex-col items-center gap-11 self-stretch px-6 py-[60px] md:flex-row md:gap-[70px] md:px-12 md:pt-[120px] md:pb-[80px]">
         <div className="flex flex-col gap-12 md:w-[420px]">
           <div className="flex flex-col gap-6 text-center md:text-left">
             <p className="text-[#6480A4]">{`[ Key Features ]`}</p>
@@ -73,7 +73,7 @@ const Feature = () => {
           </div>
         </div>
 
-        <div className="relative flex h-[160px] w-full min-w-0 items-center md:h-[424px] md:flex-1">
+        <div className="relative mt-auto mb-auto flex h-auto w-full min-w-0 items-center self-stretch md:h-[424px] md:flex-1">
           {TagImages.map((img, index) => (
             <div
               key={index}

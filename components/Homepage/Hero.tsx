@@ -28,10 +28,10 @@ const Hero = () => {
   return (
     <>
       <div className="absolute inset-0 h-full max-h-[740px] w-full object-cover">
-        <Spline
+        {/* <Spline
           className="pointer-events-none"
           scene="https://prod.spline.design/yYRZ0N8vHhXbNQIz/scene.splinecode"
-        />
+        /> */}
       </div>
       <div className="absolute inset-0 hidden h-full max-h-[740px] w-full bg-gradient-to-b from-transparent from-80% to-[#030210] md:block" />
       <section className="max-w-custom-container relative z-10 mx-auto flex flex-col justify-between gap-11 px-6 pt-[86px] pb-[68px] md:flex-row md:px-12 md:pb-[150px]">
