@@ -2,13 +2,16 @@ import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 
 import Image1 from "/public/home/dashboard-preview.png";
+import Image2 from "/public/home/dashboard-preview-trade.png";
+import Image3 from "/public/home/dashboard-preview-explore.png";
+
 import Image1Mob from "/public/home/dashboard-preview-mob.png";
 import gsap from "gsap";
 
 const TagImages = [
-  { image: Image1, imageMob: Image1Mob },
-  { image: Image1, imageMob: Image1Mob },
-  { image: Image1, imageMob: Image1Mob },
+  { image: Image1, imageMob: Image1 },
+  { image: Image2, imageMob: Image2 },
+  { image: Image3, imageMob: Image3 },
 ];
 
 const Feature = () => {
@@ -70,7 +73,7 @@ const Feature = () => {
           </div>
         </div>
 
-        <div className="relative flex h-[300px] min-w-0 w-full items-center md:h-[424px] md:flex-1">
+        <div className="relative flex h-[160px] w-full min-w-0 items-center md:h-[424px] md:flex-1">
           {TagImages.map((img, index) => (
             <div
               key={index}
@@ -86,10 +89,9 @@ const Feature = () => {
                 fill
               />
               <Image
-                className="hidden h-full w-auto object-cover max-md:flex"
+                className="hidden h-auto w-full object-fill max-md:flex"
                 src={img.imageMob}
                 alt="dashboard-preview"
-                fill
               />
             </div>
           ))}
