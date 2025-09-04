@@ -73,7 +73,7 @@ const Feature = () => {
           </div>
         </div>
 
-        <div className="relative mt-auto mb-auto flex h-auto w-full min-w-0 items-center self-stretch md:h-[424px] md:flex-1">
+        <div className="relative md:mt-auto md:mb-auto flex h-[160px] w-full min-w-0 items-center self-stretch md:h-[424px] md:flex-1">
           {TagImages.map((img, index) => (
             <div
               key={index}
