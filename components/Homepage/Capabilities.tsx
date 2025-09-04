@@ -113,11 +113,11 @@ const Capabilities = () => {
                 muted
                 playsInline
                 preload="metadata"
-                poster=""
+                poster="/videos/CapabilitiesCard1Poster.jpg"
               >
-                <source src="/videos/CapabilitiesCard2.mp4" type="video/mp4" />
+                <source src="/videos/CapabilitiesCard1.mp4" type="video/mp4" />
                 <source
-                  src="/videos/CapabilitiesCard2.webm"
+                  src="/videos/CapabilitiesCard1.webm"
                   type="video/webm"
                 />
               </video>
