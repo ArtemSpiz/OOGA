@@ -115,9 +115,9 @@ const Capabilities = () => {
                 preload="metadata"
                 poster=""
               >
-                <source src="/videos/CapabilitiesCard1.mp4" type="video/mp4" />
+                <source src="/videos/CapabilitiesCard2.mp4" type="video/mp4" />
                 <source
-                  src="/videos/CapabilitiesCard1.webm"
+                  src="/videos/CapabilitiesCard2.webm"
                   type="video/webm"
                 />
               </video>
