@@ -114,8 +114,6 @@ const Capabilities = () => {
                 playsInline
                 preload="metadata"
                 poster=""
-                autoPlay
-                loop
               >
                 <source src="/videos/CapabilitiesCard1.mp4" type="video/mp4" />
                 <source
@@ -142,8 +140,6 @@ const Capabilities = () => {
                 playsInline
                 preload="metadata"
                 poster=""
-                autoPlay
-                loop
               >
                 <source src="/videos/CapabilitiesCard2.mp4" type="video/mp4" />
                 <source
@@ -172,8 +168,6 @@ const Capabilities = () => {
                 playsInline
                 preload="metadata"
                 poster=""
-                autoPlay
-                loop
               >
                 <source src="/videos/CapabilitiesCard3.mp4" type="video/mp4" />
                 <source
@@ -200,8 +194,6 @@ const Capabilities = () => {
                 playsInline
                 preload="metadata"
                 poster=""
-                autoPlay
-                loop
               >
                 <source src="/videos/CapabilitiesCard4.mp4" type="video/mp4" />
                 <source
