@@ -97,9 +97,9 @@ const Capabilities = () => {
         <div className="flex flex-col gap-6 md:flex-row">
           <div className="flex flex-col gap-6 md:w-[498px]">
             <div
-              className="relative overflow-hidden rounded-lg border border-transparent bg-gradient-to-b bg-[linear-gradient(180deg,rgba(56,189,248,0.08)_0%,rgba(56,189,248,0.01)_100%)] from-white/5 to-white/[2%] p-8 transition-all duration-500 max-md:h-[200px] max-md:border max-md:border-[rgba(56,189,248,0.40)] md:h-[159.523px]"
-              // onMouseEnter={() => handleMouseEnter("card1")}
-              // onMouseLeave={() => handleMouseLeave("card1")}
+              className="relative overflow-hidden rounded-lg border border-transparent bg-gradient-to-b from-white/5 to-white/[2%] p-8 transition-all duration-500 hover:border-[rgba(56,189,248,0.40)] hover:bg-[linear-gradient(180deg,rgba(56,189,248,0.08)_0%,rgba(56,189,248,0.01)_100%)] max-md:h-[200px] max-md:border max-md:border-[rgba(56,189,248,0.40)] md:h-[159.523px]"
+              onMouseEnter={() => handleMouseEnter("card1")}
+              onMouseLeave={() => handleMouseLeave("card1")}
             >
               <div className="relative z-10 mb-16 flex w-[60%] flex-col gap-3">
                 <h2 className="text-xl">Turnkey</h2>
@@ -109,7 +109,7 @@ const Capabilities = () => {
               </div>
               <video
                 ref={videoRefs.card1}
-                className="absolute top-0 right-0 h-full w-full object-fill max-md:object-cover max-sm:object-[calc(100%+70px)]"
+                className="absolute right-0 bottom-[-25px] h-[149px] w-[149px] rounded-full max-md:right-[-20px] max-md:bottom-[-15px]"
                 muted
                 playsInline
                 preload="metadata"
@@ -125,9 +125,9 @@ const Capabilities = () => {
               </video>
             </div>
             <div
-              className="relative overflow-hidden rounded-lg border border-transparent bg-gradient-to-b bg-[linear-gradient(180deg,rgba(56,189,248,0.08)_0%,rgba(56,189,248,0.01)_100%)] from-white/5 to-white/[2%] p-8 transition-all duration-500 max-md:h-[200px] max-md:border max-md:border-[rgba(56,189,248,0.40)] md:h-[210.058px]"
-              // onMouseEnter={() => handleMouseEnter("card2")}
-              // onMouseLeave={() => handleMouseLeave("card2")}
+              className="relative overflow-hidden rounded-lg border border-transparent bg-gradient-to-b from-white/5 to-white/[2%] p-8 transition-all duration-500 hover:border-[rgba(56,189,248,0.40)] hover:bg-[linear-gradient(180deg,rgba(56,189,248,0.08)_0%,rgba(56,189,248,0.01)_100%)] max-md:h-[200px] max-md:border max-md:border-[rgba(56,189,248,0.40)] md:h-[210.058px]"
+              onMouseEnter={() => handleMouseEnter("card2")}
+              onMouseLeave={() => handleMouseLeave("card2")}
             >
               <div className="relative z-10 mb-16 flex w-[60%] flex-col gap-3 md:mb-[110px]">
                 <h2 className="text-xl">Multi-Wallet Support</h2>
@@ -137,7 +137,7 @@ const Capabilities = () => {
               </div>
               <video
                 ref={videoRefs.card2}
-                className="absolute top-0 right-0 h-full w-full object-fill max-md:object-cover max-md:object-[calc(100%+50px)]"
+                className="absolute right-0 bottom-[-25px] h-[149px] w-[149px] rounded-full max-md:right-[-20px] max-md:bottom-[-15px]"
                 muted
                 playsInline
                 preload="metadata"
@@ -155,9 +155,9 @@ const Capabilities = () => {
           </div>
           <div className="flex flex-col gap-6 md:w-[390px]">
             <div
-              className="relative overflow-hidden rounded-lg border border-transparent bg-gradient-to-b bg-[linear-gradient(180deg,rgba(56,189,248,0.08)_0%,rgba(56,189,248,0.01)_100%)] from-white/5 to-white/[2%] p-8 transition-all duration-500 max-md:h-[200px] max-md:border max-md:border-[rgba(56,189,248,0.40)] md:h-[209.058px]"
-              // onMouseEnter={() => handleMouseEnter("card3")}
-              // onMouseLeave={() => handleMouseLeave("card3")}
+              className="relative overflow-hidden rounded-lg border border-transparent bg-gradient-to-b from-white/5 to-white/[2%] p-8 transition-all duration-500 hover:border-[rgba(56,189,248,0.40)] hover:bg-[linear-gradient(180deg,rgba(56,189,248,0.08)_0%,rgba(56,189,248,0.01)_100%)] max-md:h-[200px] max-md:border max-md:border-[rgba(56,189,248,0.40)] md:h-[209.058px]"
+              onMouseEnter={() => handleMouseEnter("card3")}
+              onMouseLeave={() => handleMouseLeave("card3")}
             >
               <div className="relative z-10 mb-16 flex w-[60%] flex-col gap-3 md:mb-[110px]">
                 <h2 className="text-xl">Dedicated Nodes</h2>
@@ -167,7 +167,7 @@ const Capabilities = () => {
               </div>
               <video
                 ref={videoRefs.card3}
-                className="absolute top-0 right-0 h-full w-full object-fill max-md:object-cover"
+                className="absolute right-0 bottom-[-25px] h-[149px] w-[149px] rounded-full max-md:right-[-20px] max-md:bottom-[-15px]"
                 muted
                 playsInline
                 preload="metadata"
@@ -183,9 +183,9 @@ const Capabilities = () => {
               </video>
             </div>
             <div
-              className="relative overflow-hidden rounded-lg border border-transparent bg-gradient-to-b bg-[linear-gradient(180deg,rgba(56,189,248,0.08)_0%,rgba(56,189,248,0.01)_100%)] from-white/5 to-white/[2%] p-8 transition-all duration-500 max-md:h-[200px] max-md:border max-md:border-[rgba(56,189,248,0.40)] md:h-[159.523px]"
-              // onMouseEnter={() => handleMouseEnter("card4")}
-              // onMouseLeave={() => handleMouseLeave("card4")}
+              className="relative overflow-hidden rounded-lg border border-transparent bg-gradient-to-b from-white/5 to-white/[2%] p-8 transition-all duration-500 hover:border-[rgba(56,189,248,0.40)] hover:bg-[linear-gradient(180deg,rgba(56,189,248,0.08)_0%,rgba(56,189,248,0.01)_100%)] max-md:h-[200px] max-md:border max-md:border-[rgba(56,189,248,0.40)] md:h-[159.523px]"
+              onMouseEnter={() => handleMouseEnter("card4")}
+              onMouseLeave={() => handleMouseLeave("card4")}
             >
               <div className="relative z-10 mb-16 flex w-[60%] flex-col gap-3">
                 <h2 className="text-xl">Social Layer</h2>
@@ -195,7 +195,7 @@ const Capabilities = () => {
               </div>
               <video
                 ref={videoRefs.card4}
-                className="absolute top-0 right-0 h-full w-full object-fill max-md:object-cover max-md:object-[calc(100%+50px)]"
+                className="absolute right-0 bottom-[-25px] h-[149px] w-[149px] rounded-full max-md:right-[-20px] max-md:bottom-[-15px]"
                 muted
                 playsInline
                 preload="metadata"

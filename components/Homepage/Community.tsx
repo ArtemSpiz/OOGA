@@ -109,7 +109,7 @@ const Community = () => {
           {details.map((elem, index) => (
             <div
               key={index}
-              className="flex relative flex-col gap-4 overflow-hidden rounded-lg bg-gradient-to-b from-white/5 to-white/[2%]"
+              className="relative flex flex-col gap-4 overflow-hidden rounded-lg border border-transparent bg-gradient-to-b from-white/5 to-white/[2%] transition-all duration-500 hover:border-[rgba(56,189,248,0.40)] hover:bg-[linear-gradient(180deg,rgba(56,189,248,0.08)_0%,rgba(56,189,248,0.01)_100%)] max-md:h-[200px]"
               // onMouseEnter={() => handleMouseEnter(index)}
               // onMouseLeave={() => handleMouseLeave(index)}
             >
@@ -134,7 +134,7 @@ const Community = () => {
                 <source src={elem.video} type="video/mp4" />
               </video>
 
-              <div className="absolute w-[100%] z-10 right-1/2 bottom-[15px] translate-x-1/2 text-center font-['DM_Mono'] text-[10px] leading-[107%] font-light text-[#A0AEC0] uppercase">
+              <div className="absolute right-1/2 bottom-[15px] z-10 w-[100%] translate-x-1/2 text-center font-['DM_Mono'] text-[10px] leading-[107%] font-light text-[#A0AEC0] uppercase">
                 {elem.subtitle}
               </div>
             </div>
