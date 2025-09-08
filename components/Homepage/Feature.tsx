@@ -5,13 +5,16 @@ import Image1 from "/public/home/dashboard-preview.png";
 import Image2 from "/public/home/dashboard-preview-trade.png";
 import Image3 from "/public/home/dashboard-preview-explore.png";
 
-import Image1Mob from "/public/home/dashboard-preview-mob.png";
+import Image1Mob from "/public/home/Trade.svg";
+import Image2Mob from "/public/home/Scan.svg";
+import Image3Mob from "/public/home/Explore.svg";
+
 import gsap from "gsap";
 
 const TagImages = [
-  { image: Image1, imageMob: Image1 },
-  { image: Image2, imageMob: Image2 },
-  { image: Image3, imageMob: Image3 },
+  { image: Image1Mob, imageMob: Image1Mob },
+  { image: Image2Mob, imageMob: Image2Mob },
+  { image: Image3Mob, imageMob: Image3Mob },
 ];
 
 const Feature = () => {
@@ -73,7 +76,7 @@ const Feature = () => {
           </div>
         </div>
 
-        <div className="relative md:mt-auto md:mb-auto flex h-[160px] w-full min-w-0 items-center self-stretch md:h-[424px] md:flex-1">
+        <div className="relative flex h-[160px] w-full min-w-0 items-center self-stretch md:mt-auto md:mb-auto md:h-[424px] md:flex-1">
           {TagImages.map((img, index) => (
             <div
               key={index}
@@ -83,13 +86,13 @@ const Feature = () => {
               className="absolute top-0 left-0 h-full w-full overflow-hidden rounded-lg"
             >
               <Image
-                className="h-full w-full object-contain max-md:hidden"
+                className="hidden object-contain md:block"
                 src={img.image}
                 alt="dashboard-preview"
                 fill
               />
               <Image
-                className="hidden h-auto w-full object-fill max-md:flex"
+                className="block w-full object-fill md:hidden"
                 src={img.imageMob}
                 alt="dashboard-preview"
               />
