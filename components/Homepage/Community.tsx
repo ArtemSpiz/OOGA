@@ -88,7 +88,7 @@ const Community = () => {
   };
 
   return (
-    <section className="relative bg-[#030210]">
+    <section id="community" className="relative bg-[#030210]">
       <div className="pointer-events-none absolute top-0 left-0 h-auto max-w-[500px]">
         <Image alt="LightLeft" src={LightLeft} />
       </div>
@@ -109,7 +109,7 @@ const Community = () => {
           {details.map((elem, index) => (
             <div
               key={index}
-              className="relative flex flex-col gap-4 overflow-hidden rounded-lg border border-transparent bg-gradient-to-b from-white/5 to-white/[2%] transition-all duration-500 hover:border-[rgba(56,189,248,0.40)] hover:bg-[linear-gradient(180deg,rgba(56,189,248,0.08)_0%,rgba(56,189,248,0.01)_100%)] "
+              className="relative flex flex-col gap-4 overflow-hidden rounded-lg border border-transparent bg-gradient-to-b from-white/5 to-white/[2%] transition-all duration-500 hover:border-[rgba(56,189,248,0.40)] hover:bg-[linear-gradient(180deg,rgba(56,189,248,0.08)_0%,rgba(56,189,248,0.01)_100%)]"
               // onMouseEnter={() => handleMouseEnter(index)}
               // onMouseLeave={() => handleMouseLeave(index)}
             >

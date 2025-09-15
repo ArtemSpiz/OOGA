@@ -9,7 +9,6 @@ import Image1Mob from "/public/home/Trade.svg";
 import Image2Mob from "/public/home/Scan.svg";
 import Image3Mob from "/public/home/Explore.svg";
 
-import gsap from "gsap";
 
 const TagImages = [
   { image: Image1Mob, imageMob: Image1Mob },
@@ -21,13 +20,15 @@ const Feature = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const imagesRef = useRef<(HTMLDivElement | null)[]>([]);
 
-  const handleClick = (index: number) => {
+  const handleClick = async (index: number) => {
     if (index === activeIndex) return;
 
     const prevImg = imagesRef.current[activeIndex];
     const nextImg = imagesRef.current[index];
 
     if (prevImg && nextImg) {
+      const gsap = (await import("gsap")).default;
+      
       gsap.to(prevImg, { y: -50, opacity: 0, duration: 0.5 });
 
       gsap.fromTo(
@@ -41,11 +42,17 @@ const Feature = () => {
   };
 
   useEffect(() => {
-    imagesRef.current.forEach((img, i) => {
-      if (img) {
-        gsap.set(img, { opacity: i === activeIndex ? 1 : 0, y: 0 });
-      }
-    });
+    const initGSAP = async () => {
+      const gsap = (await import("gsap")).default;
+      
+      imagesRef.current.forEach((img, i) => {
+        if (img) {
+          gsap.set(img, { opacity: i === activeIndex ? 1 : 0, y: 0 });
+        }
+      });
+    };
+
+    initGSAP();
   }, []);
 
   return (

@@ -1,8 +1,4 @@
 import { useEffect, useRef } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
 
 const Grow = () => {
   const text = `OOGA brings trading and community together in a decentralized space, giving you the tools to earn more, explore the market, and grow
@@ -14,19 +10,29 @@ const Grow = () => {
   useEffect(() => {
     if (!wordRefs.current.length) return;
 
-    gsap.set(wordRefs.current, { color: "rgba(255,255,255,0.3)" });
+    // Dynamically import GSAP and ScrollTrigger only on client side
+    const initGSAP = async () => {
+      const gsap = (await import("gsap")).default;
+      const { ScrollTrigger } = await import("gsap/ScrollTrigger");
+      
+      gsap.registerPlugin(ScrollTrigger);
 
-    gsap.to(wordRefs.current, {
-      color: "rgba(255,255,255,1)",
-      stagger: 0.02,
-      ease: "power5.inOut",
-      scrollTrigger: {
-        trigger: wordRefs.current[0]?.parentElement,
-        start: "top 80%",
-        end: "top 30%",
-        scrub: 1,
-      },
-    });
+      gsap.set(wordRefs.current, { color: "rgba(255,255,255,0.3)" });
+
+      gsap.to(wordRefs.current, {
+        color: "rgba(255,255,255,1)",
+        stagger: 0.02,
+        ease: "power5.inOut",
+        scrollTrigger: {
+          trigger: wordRefs.current[0]?.parentElement,
+          start: "top 80%",
+          end: "top 30%",
+          scrub: 1,
+        },
+      });
+    };
+
+    initGSAP();
   }, []);
 
   return (

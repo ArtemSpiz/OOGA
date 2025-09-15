@@ -8,14 +8,13 @@ const Header = () => {
   const navigations = [
     { name: "Tools", href: "#tools" },
     { name: "Rewards", href: "#rewards" },
-    { name: "Community", href: "/" },
-    { name: "Docs", href: "/" },
+    { name: "Community", href: "#community" },
   ];
 
   const navigationsMob = [
     { name: "Tools", href: "#tools" },
     { name: "Rewards", href: "#rewards" },
-    { name: "Community", href: "/" },
+    { name: "Community", href: "#community" },
     { name: "Docs", href: "/" },
   ];
 
@@ -113,6 +112,12 @@ const Header = () => {
             </nav>
             <div className="h-3.5 w-px bg-white/30" />
             <div className="flex items-center gap-8">
+              <Link
+                className="hover:text-primary font-light transition-colors"
+                href="/"
+              >
+                Docs{" "}
+              </Link>
               <Link
                 href="https://x.com"
                 target="_blank"
