@@ -1,91 +1,50 @@
 "use client";
 import Image from "next/image";
-import { useRef, useEffect } from "react";
+import Lottie from "lottie-react";
+import { useEffect, useState } from "react";
 import LightLeft from "/public/comLightLeft.png";
 import LightRight from "/public/comLightRight.png";
 
 const Community = () => {
+  const [animations, setAnimations] = useState<any[]>([]);
+
+  useEffect(() => {
+    const loadAnimations = async () => {
+      try {
+        const [card1, card2, card3] = await Promise.all([
+          fetch("/videos/CommunityCard1.json").then((res) => res.json()),
+          fetch("/videos/CommunityCard2.json").then((res) => res.json()),
+          fetch("/videos/CommunityCard3.json").then((res) => res.json()),
+        ]);
+        setAnimations([card1, card2, card3]);
+      } catch (error) {
+        console.error("Failed to load animations:", error);
+      }
+    };
+
+    loadAnimations();
+  }, []);
+
   const details = [
     {
       heading: "Alpha",
       desc: "Integrated token broadcasting with filters, so you never miss a call",
-      video: "/videos/CommunityCard1.mp4",
+      animationPath: "/videos/CommunityCard1.json",
       subtitle: "Integrated scanning bots",
     },
     {
       heading: "Chats",
       desc: "Collaborate with OOGA's custom social network",
-      video: "/videos/CommunityCard2.mp4",
+      animationPath: "/videos/CommunityCard2.json",
       subtitle: "Connect in a dedicated network",
     },
     {
       heading: "Clans",
       desc: "Create your own trading groups and grow together",
-      video: "/videos/CommunityCard3.mp4",
+      animationPath: "/videos/CommunityCard3.json",
       subtitle: "Grow Stronger as a Clan",
     },
   ];
-
-  const videoRefs = useRef<HTMLVideoElement[]>([]);
-  const reverseAnimations = useRef<(number | null)[]>([null, null, null]);
-
-  useEffect(() => {
-    videoRefs.current.forEach((video) => {
-      if (video) {
-        video.currentTime = 0;
-        video.load();
-
-        const handleLoadedData = () => {
-          video.currentTime = 0;
-        };
-
-        video.addEventListener("loadeddata", handleLoadedData);
-
-        return () => {
-          video.removeEventListener("loadeddata", handleLoadedData);
-        };
-      }
-    });
-  }, []);
-
-  const handleMouseEnter = (index: number) => {
-    const video = videoRefs.current[index];
-    if (video) {
-      if (reverseAnimations.current[index]) {
-        cancelAnimationFrame(reverseAnimations.current[index]!);
-        reverseAnimations.current[index] = null;
-      }
-      video.playbackRate = 1;
-      video.currentTime = 0;
-      video.play().catch(() => {
-        video.currentTime = 0;
-      });
-    }
-  };
-
-  const handleMouseLeave = (index: number) => {
-    const video = videoRefs.current[index];
-    if (!video) return;
-
-    video.pause();
-
-    const step = () => {
-      if (!videoRefs.current[index]) return;
-      const v = videoRefs.current[index];
-      if (v.currentTime > 0.05) {
-        v.currentTime -= 0.03;
-        reverseAnimations.current[index] = requestAnimationFrame(step);
-      } else {
-        v.currentTime = 0;
-        if (reverseAnimations.current[index]) {
-          cancelAnimationFrame(reverseAnimations.current[index]!);
-          reverseAnimations.current[index] = null;
-        }
-      }
-    };
-
-    reverseAnimations.current[index] = requestAnimationFrame(step);
-  };
 
   return (
     <section id="community" className="relative bg-[#030210]">
@@ -119,20 +78,24 @@ const Community = () => {
                   {elem.desc}
                 </p>
               </div>
-              <video
-                ref={(el) => {
-                  if (el) videoRefs.current[index] = el;
-                }}
-                className="mt-auto w-full object-cover"
-                muted
-                playsInline
-                preload="metadata"
-                poster=""
-                autoPlay
-                loop
-              >
-                <source src={elem.video} type="video/mp4" />
-              </video>
+              <div className="relative mt-auto w-full">
+                <div
+                  className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+                  style={{
+                    backgroundImage: "url('/videos/card.png')",
+                  }}
+                />
+                {animations[index] ? (
+                  <Lottie
+                    animationData={animations[index]}
+                    loop={true}
+                    autoplay={true}
+                    className="relative z-10 h-auto w-full"
+                  />
+                ) : (
+                  <div className="h-48 w-full animate-pulse rounded bg-gray-800" />
+                )}
+              </div>
 
               <div className="absolute right-1/2 bottom-[15px] z-10 w-[100%] translate-x-1/2 text-center font-['DM_Mono'] text-[10px] leading-[107%] font-light text-[#A0AEC0] uppercase">
                 {elem.subtitle}

@@ -1,7 +1,25 @@
 import Image from "next/image";
+import Lottie from "lottie-react";
+import { useEffect, useState } from "react";
 import { Coin, Gift, Relation } from "../Common/Icons";
 
 const Rewards = () => {
+  const [circleAnimation, setCircleAnimation] = useState<any>(null);
+
+  useEffect(() => {
+    const loadAnimation = async () => {
+      try {
+        const response = await fetch("/videos/сircle.json");
+        const animationData = await response.json();
+        setCircleAnimation(animationData);
+      } catch (error) {
+        console.error("Failed to load circle animation:", error);
+      }
+    };
+
+    loadAnimation();
+  }, []);
+
   const rewards = [
     {
       Icon: Gift,
@@ -53,16 +71,34 @@ const Rewards = () => {
           </div>
         </div>
         <div className="relative w-[50%] max-md:w-[100%]">
-          <video className="w-[100%]" autoPlay muted loop playsInline>
-            <source src="/videos/RewardsVideo.mp4" type="video/mp4" />
-          </video>{" "}
+          <div
+            className="absolute bg-cover bg-center bg-no-repeat"
+            style={{
+              backgroundImage: "url('/videos/section-bg.png')",
+              width: "100%",
+              height: "100%",
+              top: "50%",
+              left: "50%",
+              transform: "translate(-49%, -49%)",
+            }}
+          />
+          {circleAnimation ? (
+            <Lottie
+              animationData={circleAnimation}
+              loop={true}
+              autoplay={true}
+              className="relative z-10 h-auto w-[100%]"
+            />
+          ) : (
+            <div className="h-96 w-full animate-pulse rounded bg-gray-800" />
+          )}
           <div
             className="pointer-events-none absolute inset-0"
             style={{
               background:
                 "radial-gradient(circle, rgba(3,2,16,0) 40%, #030210 100%)",
             }}
-          />{" "}
+          />
         </div>
       </div>
     </section>
