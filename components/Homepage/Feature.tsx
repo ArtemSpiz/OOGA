@@ -1,14 +1,9 @@
 import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 
-import Image1 from "/public/home/dashboard-preview.png";
-import Image2 from "/public/home/dashboard-preview-trade.png";
-import Image3 from "/public/home/dashboard-preview-explore.png";
-
 import Image1Mob from "/public/home/Trade.svg";
 import Image2Mob from "/public/home/Scan.svg";
 import Image3Mob from "/public/home/Explore.svg";
-
 
 const TagImages = [
   { image: Image1Mob, imageMob: Image1Mob },
@@ -28,7 +23,7 @@ const Feature = () => {
 
     if (prevImg && nextImg) {
       const gsap = (await import("gsap")).default;
-      
+
       gsap.to(prevImg, { y: -50, opacity: 0, duration: 0.5 });
 
       gsap.fromTo(
@@ -44,7 +39,7 @@ const Feature = () => {
   useEffect(() => {
     const initGSAP = async () => {
       const gsap = (await import("gsap")).default;
-      
+
       imagesRef.current.forEach((img, i) => {
         if (img) {
           gsap.set(img, { opacity: i === activeIndex ? 1 : 0, y: 0 });
@@ -53,7 +48,7 @@ const Feature = () => {
     };
 
     initGSAP();
-  }, []);
+  }, [activeIndex]);
 
   return (
     <section id="tools" className="bg-[#030210]">

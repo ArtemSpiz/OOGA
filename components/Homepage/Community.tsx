@@ -6,7 +6,7 @@ import LightLeft from "/public/comLightLeft.png";
 import LightRight from "/public/comLightRight.png";
 
 const Community = () => {
-  const [animations, setAnimations] = useState<any[]>([]);
+  const [animations, setAnimations] = useState<unknown[]>([]);
 
   useEffect(() => {
     const loadAnimations = async () => {

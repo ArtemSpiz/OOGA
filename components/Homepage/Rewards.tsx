@@ -1,10 +1,9 @@
-import Image from "next/image";
 import Lottie from "lottie-react";
 import { useEffect, useState } from "react";
 import { Coin, Gift, Relation } from "../Common/Icons";
 
 const Rewards = () => {
-  const [circleAnimation, setCircleAnimation] = useState<any>(null);
+  const [circleAnimation, setCircleAnimation] = useState<unknown>(null);
 
   useEffect(() => {
     const loadAnimation = async () => {

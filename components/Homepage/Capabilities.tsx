@@ -37,7 +37,7 @@ const Capabilities = () => {
         };
       }
     });
-  }, []);
+  }, [videoRefs]);
 
   const handleMouseEnter = (key: string) => {
     const video = videoRefs[key].current;
