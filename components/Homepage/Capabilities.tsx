@@ -86,7 +86,7 @@ const Capabilities = () => {
       </div>
       <div className="mx-auto flex max-w-[890px] flex-col gap-14 px-6 py-[80px]">
         <div className="flex flex-col gap-6 text-center">
-          <p className="text-[#6480A4]">{`[ Capabilities ]`}</p>
+          <p className="text-[#6480A4]">{`[ Tools ]`}</p>
           <h1 className="text-[2rem] leading-[calc(2rem*1.2)] font-light text-[#D5F6FE] md:text-[3rem] md:leading-[calc(3rem*1.2)]">
             Advanced Infrastructure
           </h1>
@@ -130,7 +130,7 @@ const Capabilities = () => {
               <div className="relative z-10 mb-16 flex w-[60%] flex-col gap-3 md:mb-[110px]">
                 <h2 className="text-xl">Multi-Wallet Support</h2>
                 <p className="text-sm text-[#D5F6FE]/50">
-                  Buy and sell simultaneously to elevate your trades
+                  Streamline your trading with effortless multi-wallet transactions in one click.
                 </p>
               </div>
               <video
@@ -184,7 +184,7 @@ const Capabilities = () => {
               <div className="relative z-10 mb-16 flex w-[60%] flex-col gap-3">
                 <h2 className="text-xl">Social Layer</h2>
                 <p className="text-sm text-[#D5F6FE]/50">
-                  First trading-social platform
+                  First trading platform with an integrated social layer.
                 </p>
               </div>
               <video
