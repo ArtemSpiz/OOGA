@@ -19,7 +19,7 @@ const Hero = () => {
     },
     {
       heading: "Social Layer",
-      desc: "OOGA Is Non-Custodial and has no access to user private keys 4",
+      desc: "OOGA Is Non-Custodial and has no access to user private keys 5",
     },
   ];
 
