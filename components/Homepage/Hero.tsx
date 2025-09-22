@@ -7,19 +7,19 @@ const Hero = () => {
   const points = [
     {
       heading: "Turnkey",
-      desc: "OOGA Is Non-Custodial and has no access to user private keys",
+      desc: "Turnkey ensures the highest-level security for traders.",
     },
     {
       heading: "Dedicated Nodes",
-      desc: "OOGA Is Non-Custodial and has no access to user private keys 2",
+      desc: "Enjoy lightning fast transaction speeds.",
     },
     {
       heading: "Multi-Wallet Support",
-      desc: "OOGA Is Non-Custodial and has no access to user private keys 3",
+      desc: "Buy and sell simultaneously across all of your wallets.",
     },
     {
       heading: "Social Layer",
-      desc: "OOGA Is Non-Custodial and has no access to user private keys 5",
+      desc: "Add friends, chat or create a clan to grow your network.",
     },
   ];
 

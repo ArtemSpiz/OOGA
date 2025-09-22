@@ -30,19 +30,19 @@ const Community = () => {
       heading: "Alpha",
       desc: "Integrated token broadcasting with filters, so you never miss a call",
       animationPath: "/videos/CommunityCard1.json",
-      subtitle: "Integrated scanning bots",
+
     },
     {
       heading: "Chats",
-      desc: "Collaborate with OOGA's custom social network",
+      desc: "Stay connected through OOGA’s built-in chat system",
       animationPath: "/videos/CommunityCard2.json",
-      subtitle: "Connect in a dedicated network",
+
     },
     {
       heading: "Clans",
       desc: "Create your own trading groups and grow together",
       animationPath: "/videos/CommunityCard3.json",
-      subtitle: "Grow Stronger as a Clan",
+
     },
   ];
 
@@ -97,9 +97,6 @@ const Community = () => {
                 )}
               </div>
 
-              <div className="absolute right-1/2 bottom-[15px] z-10 w-[100%] translate-x-1/2 text-center font-['DM_Mono'] text-[10px] leading-[107%] font-light text-[#A0AEC0] uppercase">
-                {elem.subtitle}
-              </div>
             </div>
           ))}
         </div>

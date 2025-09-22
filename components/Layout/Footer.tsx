@@ -18,10 +18,10 @@ const Footer = () => {
             <div className="flex flex-col gap-4">
               <Link
                 className="text-sm font-light text-[#A8A8A8]"
-                href="https://linkedin.com"
+                href="https://discord.com"
                 target="_blank"
               >
-                Linkedin
+                Discord
               </Link>
               <Link
                 className="text-sm font-light text-[#A8A8A8]"
