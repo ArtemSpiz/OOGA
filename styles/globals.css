@@ -6,11 +6,12 @@
   --spacing-custom-container: 1440px;
 }
 
-/* body {
+body {
   max-width: 100vw;
   overflow-x: hidden;
+  background-color: #030210;
 }
 
 html {
   scroll-behavior: smooth;
-} */
+}
