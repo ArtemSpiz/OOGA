@@ -76,6 +76,8 @@ const Capabilities = () => {
     }
   };
 
+  //ffffff
+
   return (
     <section className="relative bg-[#030210]">
       <div className="pointer-events-none absolute top-[-100px] left-0 h-auto max-w-[600px]">
